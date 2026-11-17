@@ -9,7 +9,7 @@ export function encode(text, level='M') {
   const segments = engine.QrSegment.makeSegments(text);
   if (/[^\x00-\x7f]/.test(text)) segments.unshift(engine.QrSegment.makeEci(26));
   try { return engine.QrCode.encodeSegments(segments,levels[level],1,40,-1,false); }
-  catch { throw new Error('Este contenido no cabe con el nivel '+level+'. Reduce el texto o elige una corrección menor.'); }
+  catch { throw new Error('Este contenido no cabe con el nivel '+level+'. Reduce el texto.'); }
 }
 export function raster(qr, scale=6) {
   const width=(qr.size+8)*scale;

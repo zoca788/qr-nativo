@@ -1,5 +1,6 @@
 :root{color-scheme:light;--surface:#e8edf0;--ink:#314958;--muted:#5e727e;--light:#fff;--shade:#c5cdd2;--accent:#416c65;background:var(--surface);color:var(--ink)}
 body{background:var(--surface)}
+.workspace:not(.has-preview){grid-template-columns:1fr;max-width:650px;margin-left:auto;margin-right:auto}.input-error{font-size:12px;color:#893d30;line-height:1.6;margin-top:20px}
 .topbar{border-color:#d4dce1}
 .brand{color:#314958}.brand-icon{display:grid;place-items:center;width:45px;height:45px;font-size:30px;border-radius:13px;background:var(--surface);box-shadow:5px 5px 10px var(--shade),-5px -5px 10px var(--light)}
 .source{padding:11px 16px;border-radius:25px;background:var(--surface);box-shadow:4px 4px 8px var(--shade),-4px -4px 8px var(--light);font-weight:600}
