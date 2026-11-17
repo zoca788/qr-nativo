@@ -1,10 +1,10 @@
 import {encode,validate,svg,raster} from './qr.js';
 const $=id=>document.getElementById(id);
-let type='text', current=null, timer;
+let type='text', current=null;
 const escapeWifi=s=>s.replace(/([\\;,:" ])/g,'\\$1');
 function payload(){
   if(type==='text') return $('content').value.trim() ? $('content').value : '';
-  if(!$('ssid').value.trim() || !$('password').value.length) return '';
+  if(!$('ssid').value.length && !$('password').value.length) return '';
   return `WIFI:T:WPA;S:${escapeWifi($('ssid').value)};P:${escapeWifi($('password').value)};;`;
 }
 function invalidate(){
@@ -15,7 +15,7 @@ function invalidate(){
   $('dimensions').textContent=$('level').textContent='—';
 }
 function generate(){
-  clearTimeout(timer);invalidate();
+  invalidate();
   const text=payload();$('byte-count').textContent=`${new TextEncoder().encode($('content').value).length} bytes`;
   if(!text) return;
   try{
@@ -28,11 +28,13 @@ function generate(){
     $('dimensions').textContent=`Versión ${qr.version} · ${qr.size} × ${qr.size}`;
     $('level').textContent='Corrección Q';
     $('payload').textContent=text;
-    $('message').textContent='Los bytes coinciden. Listo para compartir.';
+    $('message').textContent=type==='wifi' && (!$('ssid').value.length || !$('password').value.length)
+      ? 'Vista previa en vivo. Completa el nombre y la contraseña para conectarte a la red.'
+      : 'Los bytes coinciden. Listo para compartir.';
     $('png').disabled=$('svg').disabled=false;
   }catch(error){$('input-error').hidden=false;$('input-error').textContent=error.message;}
 }
-function changed(){invalidate();$('status').className='badge';$('status').textContent='Pendiente';$('message').textContent='';clearTimeout(timer);timer=setTimeout(generate,350);}
+function changed(){generate();}
 document.querySelectorAll('[data-type]').forEach(tab=>{
  tab.addEventListener('click',()=>{
    type=tab.dataset.type;
@@ -41,7 +43,11 @@ document.querySelectorAll('[data-type]').forEach(tab=>{
  });
  tab.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();const next=event.key==='Home'?$('text-tab'):event.key==='End'?$('wifi-tab'):tab.id==='text-tab'?$('wifi-tab'):$('text-tab');next.click();next.focus();}});
 });
-['content','ssid','password'].forEach(id=>$(id).addEventListener('input',changed));
+['content','ssid','password'].forEach(id=>{
+  $(id).addEventListener('input',changed);
+  $(id).addEventListener('change',changed);
+});
+window.addEventListener('pageshow',generate);
 function download(blob,name){const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
 $('svg').addEventListener('click',()=>{if(current)download(new Blob([svg(current)],{type:'image/svg+xml'}),'qr-nativo.svg');});
 $('png').addEventListener('click',()=>{

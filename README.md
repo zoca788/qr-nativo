@@ -4,7 +4,7 @@ Generador estático de códigos QR directos, sin redirecciones intermedias ni se
 
 ## Uso
 
-Escribe texto, pega una URL o introduce el nombre y la contraseña de una red Wi-Fi personal WPA. La generación es automática, con corrección Q fija. Los ejemplos solo son placeholders. La vista previa permanece oculta hasta que hay contenido o ambos campos Wi-Fi están completos, y se oculta si se borran los datos necesarios. El contenido se codifica exactamente, con UTF-8 y ECI 26 para Unicode. Descarga PNG o SVG. Un lector independiente decodifica el símbolo y compara sus bytes con los originales antes de permitir la descarga.
+Escribe texto, pega una URL o introduce el nombre y la contraseña de una red Wi-Fi personal WPA. La generación es inmediata con cada entrada o cambio, con corrección Q fija. Los ejemplos solo son placeholders. La vista previa aparece al escribir texto o en cualquiera de los campos Wi-Fi; se oculta al vaciar todos los campos del modo activo. Si faltan datos Wi-Fi, se indica que la vista previa está incompleta. El contenido se codifica exactamente, con UTF-8 y ECI 26 para Unicode. Descarga PNG o SVG. Un lector independiente decodifica el símbolo y compara sus bytes con los originales antes de permitir la descarga.
 
 La información se procesa en memoria del navegador: no se transmite ni se guarda en almacenamiento local. No hay analítica, fuentes remotas ni CDN en tiempo de ejecución. GitHub sirve los archivos estáticos y puede registrar las peticiones de acceso según sus políticas.
 
