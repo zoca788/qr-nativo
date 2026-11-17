@@ -1,0 +1,1 @@
+{"name":"qr-nativo","version":"1.0.0","private":true,"type":"module","scripts":{"build":"esbuild src/app.js --bundle --minify --legal-comments=eof --outfile=app.js","test":"esbuild tests/qr.test.js --bundle --platform=node --format=esm --outfile=../../work/qr-tests.mjs && node ../../work/qr-tests.mjs"},"dependencies":{"jsqr":"1.4.0"},"devDependencies":{"esbuild":"0.25.12"}}

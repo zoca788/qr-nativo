@@ -1,0 +1,24 @@
+:root{color-scheme:light;--surface:#e8edf0;--ink:#314958;--muted:#5e727e;--light:#fff;--shade:#c5cdd2;--accent:#416c65;background:var(--surface);color:var(--ink)}
+body{background:var(--surface)}
+.topbar{border-color:#d4dce1}
+.brand{color:#314958}.brand-icon{display:grid;place-items:center;width:45px;height:45px;font-size:30px;border-radius:13px;background:var(--surface);box-shadow:5px 5px 10px var(--shade),-5px -5px 10px var(--light)}
+.source{padding:11px 16px;border-radius:25px;background:var(--surface);box-shadow:4px 4px 8px var(--shade),-4px -4px 8px var(--light);font-weight:600}
+.eyebrow{color:#526c75}.eyebrow span{background:#517a71;box-shadow:0 0 0 4px #dce5e4}
+h1{font-weight:600;letter-spacing:-3px}h1 span{color:#758d99}.intro p{color:var(--muted)}
+.workspace{background:var(--surface);border:1px solid #f5f7f9;border-radius:28px;box-shadow:16px 16px 35px #c9d1d6,-16px -16px 35px #ffffff}
+.editor{padding:36px}.section-heading h2{color:var(--ink)}
+.step{background:var(--surface);border:0;color:#5c7580;box-shadow:inset 2px 2px 4px #c5cdd2,inset -2px -2px 4px white}
+.tabs{background:var(--surface);border-radius:14px;box-shadow:inset 4px 4px 8px #c9d1d6,inset -4px -4px 8px #fff;padding:7px;gap:8px}
+.tabs button{border-radius:10px;color:#5b707c;font-weight:550}.tabs button.active{background:var(--surface);color:#2e5856;box-shadow:4px 4px 7px #c4cdd3,-4px -4px 7px #ffffff}
+label{color:#435d6b}textarea,input:not([type=checkbox]),select{border:1px solid #e9eff3;background:var(--surface);color:#314958;border-radius:13px;box-shadow:inset 5px 5px 10px #cbd3d9,inset -5px -5px 10px #ffffff;padding:14px}textarea::placeholder,input::placeholder{color:#6c818d;opacity:1}
+.field-meta,.hint,.private{color:#5f7480}.hint{font-size:11px}.field-meta{font-size:10px}.private{font-size:11px}
+.primary{background:#dce8e4;color:#30574d;border:1px solid #eaf3ee;border-radius:13px;box-shadow:6px 6px 12px #c0cbd0,-6px -6px 12px white;padding:17px 19px}.primary:hover{background:#d3e3dc}.primary:active{box-shadow:inset 4px 4px 8px #b7cac3,inset -4px -4px 8px #f3fff9}
+.preview{background:var(--surface);border-left:1px solid #d7dfe4;padding:30px 32px}.preview-top{color:#5e7481}.badge{background:var(--surface);color:#3f6a58;border:1px solid #eaf1ed;box-shadow:3px 3px 6px #c8d0d6,-3px -3px 6px #fff;padding:7px 11px}.badge.error{background:#f0e3df;color:#893d30;box-shadow:inset 2px 2px 4px #d9c8c3,inset -2px -2px 4px #fff}
+.qr-stage{padding:28px 0 23px;min-height:300px}.qr-stage #qr{background:#fff;padding:12px;border-radius:18px;box-shadow:10px 10px 20px #c2ccd3,-10px -10px 20px #fff;max-width:100%}
+.qr-meta{color:#5c7381}.downloads{gap:14px}.downloads button{border:1px solid #f2f5f7;border-radius:12px;background:var(--surface);color:#365866;box-shadow:5px 5px 10px #c3cdd3,-5px -5px 10px #fff;padding:14px 13px;font-weight:600}.downloads button:first-child{background:var(--surface);border-color:#f2f5f7;color:#365866}.downloads button:hover{filter:none;background:#e2e9ec}.downloads button:active{box-shadow:inset 3px 3px 6px #c3cdd3,inset -3px -3px 6px #fff}.downloads button:disabled{box-shadow:none;opacity:.5}
+.result-message{color:#506d60}details{border-color:#d2dce1}summary{color:#4e6978}pre{background:var(--surface);color:#425d6b;border-radius:10px;padding:12px;box-shadow:inset 3px 3px 6px #cbd4d9,inset -3px -3px 6px #fff}
+.principles{gap:22px;margin:39px 0 29px}.principles article{background:var(--surface);padding:23px;border-radius:19px;box-shadow:7px 7px 16px #cbd3d9,-7px -7px 16px #fff;border:1px solid #eff3f5}.feature-number{color:#607987}.principles h3{color:#3e5a68}.principles p{color:#5e7480}
+.note{background:var(--surface);border:0;border-radius:17px;box-shadow:inset 4px 4px 9px #cbd3d9,inset -4px -4px 9px #fff;padding:20px;color:#5c727f}.note strong{color:#3c5c69}.note>span{border-color:#718793;color:#57717e}
+footer{border-color:#d4dce1;color:#5e7481}.footer-separator{color:#8ca0aa}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline-color:#376e79}input:focus,textarea:focus,select:focus{outline-color:#517e88}
+@media(max-width:700px){.workspace{border-radius:23px;box-shadow:10px 10px 24px #c9d1d6,-10px -10px 24px #fff}.editor{padding:27px 23px}.preview{border-left:0;border-top:1px solid #d7dfe4;padding:27px}.principles{gap:21px}.principles article{padding:22px}.source{padding:10px 12px}.brand-icon{width:36px;height:36px;font-size:26px;border-radius:11px}h1{letter-spacing:-2px}}
